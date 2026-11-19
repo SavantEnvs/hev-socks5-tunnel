@@ -1,0 +1,38 @@
+tunnel:
+  name: tun0
+  mtu: 1500
+  multi-queue: true
+  ipv4: 198.18.0.1
+  ipv6: 'fc00::1'
+  icmp: 'reply'
+  offload:
+    tso: true
+    uso: false
+    jumbo: true
+socks5:
+  port: 1080
+  address: '::1'
+  udp: 'tcp'
+  udp-address: 127.0.0.2
+  pipeline: true
+  username: 'u'
+  password: 'p'
+  mark: 438
+  tcp-fastopen: true
+mapdns:
+  address: 198.18.0.2
+  port: 53
+  network: 100.64.0.0
+  netmask: 255.192.0.0
+  cache-size: 10000
+misc:
+  task-stack-size: 86016
+  tcp-buffer-size: 65536
+  udp-recv-buffer-size: 524288
+  udp-copy-buffer-nums: 10
+  max-session-count: 100
+  connect-timeout: 5000
+  tcp-read-write-timeout: 60000
+  udp-read-write-timeout: 60000
+  log-level: warn
+  log-file: stderr
